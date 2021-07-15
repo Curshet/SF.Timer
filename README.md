@@ -1,3 +1,3 @@
 # Task 
 
-Application withot using UIKit, SwiftUi.
+Application withoгt using UIKit, SwiftUI
