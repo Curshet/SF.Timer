@@ -4,16 +4,16 @@ import Foundation
 class Table: CustomStringConvertible {
     
     private var timers: [Timer] = []
-    private var validTimers: [Timer] = []
     
     private func updateTimers() {
+        var validTimers: [Timer] = []
         for timer in timers {
             if !timer.isFinished() {
                 validTimers.append(timer)
-                timers = validTimers
             }
-        }
+        timers = validTimers
     }
+}
     
     func updateTable() {
         updateTimers()
@@ -42,12 +42,12 @@ class Timer {
     private var pausePeriod = 0
     
     func start() {
-        guard pauseTime != nil else { return }
+        guard pauseTime == nil else { return }
         startTime = Int(Date().timeIntervalSince1970)
     }
     
     func isFinished() -> Bool {
-        guard startTime != nil else { return true }
+        guard startTime == nil else { return true }
         
         let currentTime = Int(Date().timeIntervalSince1970)
         if pauseTime != nil {
@@ -64,11 +64,11 @@ class Timer {
         return currentTime - startTime!
     }
 
-    func pauseEvent() {
+    func pause() {
         pauseTime = Int(Date().timeIntervalSince1970)
     }
     
-    func resumeEvent() {
+    func resume() {
         guard pauseTime != nil else { return }
         
         let currentTime = Int(Date().timeIntervalSince1970)
@@ -91,7 +91,7 @@ class Timer {
 //tableOne.addTimer(timer: timerOne)
 //print(tableOne)
 //timerOne.start()
-//timerOne.pauseEvent()
+//timerOne.pause()
 //tableOne.updateTable()
 //print(tableOne)
 
