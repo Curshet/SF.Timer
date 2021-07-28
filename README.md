@@ -1,4 +1,4 @@
-# Timer (task) 
+# Timer (test) 
 
 Application without using UIKit, SwiftUI.
 
