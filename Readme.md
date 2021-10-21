@@ -1,6 +1,6 @@
-# Timer (test) 
+# SF.Timer (test) 
 
-Application without using UIKit, SwiftUI.
+Application (business logic) without using UIKit.
 
 - creating timers
 - start/pause timers
