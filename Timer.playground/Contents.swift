@@ -1,7 +1,6 @@
 import Foundation
 
 
-
 class Table {
 	
 	private var timers: [Timer] = []
@@ -9,7 +8,6 @@ class Table {
 	private func updateTimers() {
 		
 		var validTimers: [Timer] = []
-		
 		
 		for timer in timers {
 			
@@ -24,6 +22,7 @@ class Table {
 		}
 		
 	}
+	
 }
 
 
@@ -37,14 +36,12 @@ extension Table: CustomStringConvertible {
 		
 	}
 	
-	
 	func updateTable() {
 		
 		updateTimers()
 		timers = timers.sorted { $0.remainTime()! > $1.remainTime()! }
 		
 	}
-	
 	
 	func addTimer(timer: Timer) {
 		
@@ -66,7 +63,6 @@ class Timer {
 	private var pauseTime: Int?
 	private var pausePeriod = 0
 	
-	
 	init(name: String, countDown: Int) {
 		
 		self.name = name
@@ -74,14 +70,12 @@ class Timer {
 		
 	}
 	
-	
 	func start() {
 		
 		guard pauseTime == nil else { return }
 		startTime = Int(Date().timeIntervalSince1970)
 		
 	}
-	
 	
 	func isFinished() -> Bool {
 		
@@ -101,7 +95,6 @@ class Timer {
 		
 	}
 	
-	
 	func remainTime() -> Int? {
 		
 		guard startTime != nil else { return nil }
@@ -111,13 +104,11 @@ class Timer {
 		
 	}
 	
-	
 	func pause() {
 		
 		pauseTime = Int(Date().timeIntervalSince1970)
 		
 	}
-	
 	
 	func resume() {
 		
@@ -131,15 +122,3 @@ class Timer {
 	}
 	
 }
-
-
-//var tableOne: Table = .init()
-//var timerOne: Timer = .init(name: "Circle", countDown: 999)
-//tableOne.addTimer(timer: timerOne)
-//print(tableOne)
-//timerOne.start()
-//timerOne.pause()
-//tableOne.updateTable()
-//print(tableOne)
-
-
