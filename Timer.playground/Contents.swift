@@ -26,7 +26,7 @@ class Table {
 }
 
 
-//MARK: CustomStringConvertible Protocol
+//MARK: - CustomStringConvertible protocol implementation
 
 extension Table: CustomStringConvertible {
 	
@@ -50,7 +50,6 @@ extension Table: CustomStringConvertible {
 	}
 	
 }
-
 
 
 class Timer {
