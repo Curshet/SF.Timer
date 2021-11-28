@@ -1,4 +1,4 @@
-# SF.Timer (test) 
+# SF.Timer
 
 Application (business logic) without using UIKit framework.
 
