@@ -1,10 +1,7 @@
 # SF.Timer
 
-Application (business logic) without using UIKit framework.
+Application (business logic).
 
 - creating timers
 - start/pause timers
 - building table with timers
-
-
-**Stack**: Swift (Xcode 11), Object-Oriented Programming.
